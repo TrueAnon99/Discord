@@ -33,6 +33,11 @@ Once a client requests a certain range, it is assumed to be "subscribed"
 to that range and will receive respective `GUILD_MEMBER_LIST_UPDATE`
 events related to the ranges it is subscribed to.
 
+**ASSUMPTION:** `typing` field means the client wants to be subscribed to the
+ranges the currently-typing members are on.
+
+**ASSUMPTION:** Ranges can have any size.
+
 ### OP 14 Structure
 
 | field | type | description |
