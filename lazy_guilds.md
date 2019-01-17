@@ -1,8 +1,11 @@
 # Lazy Guilds
 
-**Note:** The lazy guild documentation described here does NOT equate to the
+**Note:** The lazy guild documentation described here does NOT represent the
 added `guild_id` fields in some message/channel events. This documents
 Unkown OP codes and mechanisms for optimization of the guild member list.
+
+**Note:** This is not a complete document on how lazy guilds work, however, it
+is lead to believe this is the most complete document on the topic.
 
 ## Known history
 
