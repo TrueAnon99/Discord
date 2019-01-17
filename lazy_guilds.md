@@ -29,9 +29,9 @@ For example, in the official client, it preloads the first 100 members in
 the list, then requesting more as time goes by, so the only range being
 requested in its OP 14 is `[0, 99]`.
 
-Once a client requests a certain range, it is assumed to be "subscribed"
+Once a client requests a certain range, it is considered "subscribed"
 to that range and will receive respective `GUILD_MEMBER_LIST_UPDATE`
-events related to the ranges it is subscribed to.
+events related to those ranges.
 
 **ASSUMPTION:** `typing` field means the client wants to be subscribed to the
 ranges the currently-typing members are on.
@@ -46,7 +46,7 @@ ranges the currently-typing members are on.
 | channels | map[snowflake -> list[list[int, int]]] | channel ranges |
 | members | unknown | unknown |
 | activities | boolean | unknown |
-| typing | boolean | unknown |
+| typing | boolean | unknown, see assumption about the nature of this field |
 
 ## `GUILD_MEMBER_LIST_UPDATE` event
 
