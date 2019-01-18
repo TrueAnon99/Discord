@@ -10,8 +10,8 @@ is lead to believe this is the most complete document on the topic.
 **Note for Server implementors:** The documentation describes behaviors that are
 non-normative for the Discord API so that it is easy to reimplement.
 
-The documentation is heavily based on [Litecord]'s implementation of lazy
-guilds.
+The documentation is heavily based on [Litecord]'s [implementation of lazy
+guilds](https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py).
 
 [Litecord]: https://gitlab.com/litecord/litecord
 
