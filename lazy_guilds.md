@@ -25,6 +25,10 @@ They were deployed on the guild and it was a success, now all the guilds have
 that feature enabled. The official client only uses Lazy Guild methods from now
 on. It is unknown when *exactly* this constraint was added.
 
+Note that lazy guilds are backwards compatible. Clients can either subscribe
+to a Lazy Guild or not, by relying on other methods to gather the member list,
+such as known OP 8 "Request Guild Members", or "undocumented" OP 12 "Guild Sync"
+
 ## OP 14 "Lazy Request"
 
 This OP Code is undocumented. "Lazy Request" is an unofficial name taken
