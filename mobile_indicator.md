@@ -4,7 +4,7 @@ The mobile indicator is a feature that recently landed on Stable versions of
 Discord (January 16, 2019). It gives a phone icon next to a given user when
 they supposedly are using their phone.
 
-## Discoverying phone usage
+## Detecting phone usage
 
 The Gateway's `IDENTIFY` packet contains a `properties` field, containing
 `$os`, `$browser` and `$device` fields. Discord uses that information to know
