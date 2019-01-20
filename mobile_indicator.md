@@ -7,6 +7,7 @@ they supposedly are using their phone.
 At the time of writing, it is unknown if its possible to opt-out of
 the mobile indicator while still maintaining your online/idle/dnd presence.
 Currently setting yourself to invisible solves the problem.
+It is also possible to patch the Android app.
 
 ## Detecting phone usage
 
@@ -15,8 +16,13 @@ The Gateway's `IDENTIFY` packet contains a `properties` field, containing
 when your phone client and only your phone client has connected to Discord,
 from there they send the extended presence object.
 
-The specific values for the `$os`, `$browser` and `$device` fields are unknown,
-and can change from time to time.
+The exact field that is checked is the `$browser` field. 
+If it's set to `Discord Android` on desktop, the mobile indicator is is 
+triggered by the desktop client.  If it's set to `Discord Client` on mobile, 
+the mobile indicator is not triggered by the mobile client.
+
+The specific values for the `$os`, `$browser` and `$device` fields are can 
+change from time to time.
 
 At the time of writing, bots can spoof those fields and have the mobile
 indicator set.
