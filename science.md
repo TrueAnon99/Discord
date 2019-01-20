@@ -61,3 +61,25 @@ Following fields are targeted towards mobile clients.
 | os\_sdk\_version | string | Android [API level] |
 
 [api level]: https://en.wikipedia.org/wiki/Android_version_history
+
+### Request body
+
+The body encodes a JSON object:
+
+| field | type | description |
+| --: | :-- | :-- |
+| token | string | analytics token. unknown if this ties up to your auth token |
+| events | list of Event | events made by the user |
+
+#### Event object
+
+**Note:** Needs more work. There are a LOT of event types that its infeasible
+to add them all. We SHOULD however, add the most known ones, such as
+`channel_opened`.
+
+**Note:** The only REQUIRED field is `type`. The rest of the fields are
+present/not present based on that type.
+
+| field | type | description |
+| --: | :-- | :-- |
+| type | string | event type |
