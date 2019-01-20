@@ -73,12 +73,11 @@ The body encodes a JSON object:
 
 #### Event object
 
-**Note:** Needs more work. There are a LOT of event types that its infeasible
-to add them all. We SHOULD however, add the most known ones, such as
-`channel_opened`.
+**Note:** The only REQUIRED field is `type`. Extensions to the Event object
+are explained at `science-events.md`.
 
-**Note:** The only REQUIRED field is `type`. The rest of the fields are
-present/not present based on that type.
+Look at a list of valid event types and respective bodies on
+`science-events.md`.
 
 | field | type | description |
 | --: | :-- | :-- |
