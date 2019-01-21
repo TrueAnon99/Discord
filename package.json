@@ -1,0 +1,24 @@
+{
+  "name": "discord-unofficial-docs",
+  "version": "0.0.1",
+  "description": "Unoffical Documentation for the Discord API",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress": "^0.14.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "vuepress build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/luna/discord-unofficial-docs.git"
+  },
+  "author": "Luna Mendes",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://gitlab.com/luna/discord-unofficial-docs/issues"
+  },
+  "homepage": "https://gitlab.com/luna/discord-unofficial-docs#readme"
+}
