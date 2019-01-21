@@ -77,10 +77,10 @@ The body encodes a JSON object:
 #### Event object
 
 **Note:** The only REQUIRED field is `type`. Extensions to the Event object
-are explained [here](/science_events).
+are explained [here](/science_events.html).
 
 Look at a list of valid event types and respective bodies
-[here](/science_events).
+[here](/science_events.html).
 
 | field | type | description |
 | --: | :-- | :-- |
