@@ -4,6 +4,7 @@ Unofficial documentation for Undocumented Discord APIs.
 
 ## Topics
 
+ - [Relationships](/relationships.html)
  - [Connection Properties](/connection_properties.html)
  - [Mobile Indicator](/mobile_indicator.html)
  - [Lazy Guilds](/lazy_guilds.html)
