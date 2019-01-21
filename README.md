@@ -4,11 +4,11 @@ Unofficial documentation for Undocumented Discord APIs
 
 ## Topics
 
- - [Connection Properties](/connection_properties)
- - [Mobile Indicator](/mobile_indicator)
- - [Lazy Guilds](/lazy_guilds)
- - [User Data Collection](/science)
- - [Per-Client Statuses](per-client_status)
+ - [Connection Properties](/connection_properties.html)
+ - [Mobile Indicator](/mobile_indicator.html)
+ - [Lazy Guilds](/lazy_guilds.html)
+ - [User Data Collection](/science.html)
+ - [Per-Client Statuses](per-client_status.html)
 
 ## Licensing?
 
