@@ -4,9 +4,7 @@ The mobile indicator is a feature that recently landed on Stable versions of
 Discord (January 16, 2019). It gives a phone icon next to a given user when
 they supposedly are using their phone.
 
-At the time of writing, it is unknown if its possible to opt-out of
-the mobile indicator while still maintaining your online/idle/dnd presence.
-Currently setting yourself to invisible solves the problem.
+You can set yourself to idle/dnd/invisible to hide the mobile indicator.
 It is also possible to patch the Android app.
 
 ## Detecting phone usage
