@@ -1,4 +1,7 @@
-# Tracking via `/api/track` and `/api/science`
+# Tracking
+
+There are two routes for User tracking / User data Collection: `/api/track` and
+`/api/science`.
 
 `/api/track` is the same as `/api/science`, both do work and accept the
 same input. The reasoning for `/api/science` to appear is that adblocking
