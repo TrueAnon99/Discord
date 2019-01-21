@@ -1,6 +1,6 @@
 # discord-unofficial-docs
 
-Unofficial documentation for Undocumented Discord APIs
+Unofficial documentation for Undocumented Discord APIs.
 
 ## Topics
 
