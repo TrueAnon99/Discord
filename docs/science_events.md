@@ -1,7 +1,7 @@
 # Science Events
 
 Events are actions the User does that are collected by Discord. More information
-on the `science.md` file.
+on tracking and collection [here](/science.html).
 
 This gives a non-thorough list of Event objects.
 
@@ -94,6 +94,8 @@ are fields that may or may not be present in a Properties object.
 | --: | :-- | :-- |
 | window_height | integer | client window height in pixels |
 | window_width | integer | client window width in pixels |
+
+# Event types
 
 ## `member_list_viewed`
 
