@@ -28,16 +28,16 @@ The routes can be called at, theoretically, any point in time, but the *usual*
 behavior is when you change channels, servers, enter/exit settings, acknowledge
 messages, etc.
 
-The request contains special CORS configurations to accept specific headers,
-such as `X-Fingerprint` and `X-Super-Properties`.
+It contains two headers that are specific to tracking: `X-Fingerprint` and
+`X-Super-Properties`.
 
-The `X-Fingerprint` header specifies a device fingerprint, it is an opaque
+The `X-Fingerprint` header specifies a device fingerprint, it is an "opaque"
 string given by the `POST /api/v6/auth/fingerprint` route (request does not
 contain body). It is assumed fingerprint generation happens on first client
 start, or first client login.
 
-The `X-Super-Properties` header encodes a base64 representation of a JSON
-object.
+The `X-Super-Properties` header encodes a base64 representation of a Super
+Properties object.
 
 ### Super Properties object
 
@@ -48,12 +48,12 @@ object.
 | browser\_user\_agent | string | **full** browser user agent string |
 | browser\_version | string | complete browser version |
 | os\_version | string | operating system version, if available |
-| referrer | string | ??? |
-| referring\_domain | string | ??? |
-| referring\_domain\_current | string | ??? |
 | release\_channel | string | the client's release channel, `stable`, `ptb`, `canary` |
 | client\_build\_number | integer | the client's build number |
 | client\_event\_source | Nullable[?] | ??? |
+| referrer | string | ??? |
+| referring\_domain | string | ??? |
+| referring\_domain\_current | string | ??? |
 
 Following fields are targeted towards mobile clients.
 
@@ -77,10 +77,10 @@ The body encodes a JSON object:
 #### Event object
 
 **Note:** The only REQUIRED field is `type`. Extensions to the Event object
-are explained at `science-events.md`.
+are explained [here](/science_events).
 
-Look at a list of valid event types and respective bodies on
-`science-events.md`.
+Look at a list of valid event types and respective bodies
+[here](/science_events).
 
 | field | type | description |
 | --: | :-- | :-- |
