@@ -84,7 +84,7 @@ are fields that may or may not be present in a Properties object.
 | num\_games\_total | integer | number of games seen in activity |
 | seconds\_spent | integer | amount of seconds spent in activity view |
 | store\_application\_ids\_viewed | list of snowflakes | application ids the user viewed |
-| store\_sku\_ids_viewed | list of snowflakes | skus the user viewed |
+| store\_sku\_ids\_viewed | list of snowflakes | skus the user viewed |
 
  - SKUs can be thought of as discord Store entries (Stock Keeping Unit).
 
@@ -92,8 +92,8 @@ are fields that may or may not be present in a Properties object.
 
 | field | type | description |
 | --: | :-- | :-- |
-| window_height | integer | client window height in pixels |
-| window_width | integer | client window width in pixels |
+| window\_height | integer | client window height in pixels |
+| window\_width | integer | client window width in pixels |
 
 # Event types
 
@@ -125,3 +125,14 @@ Contains ActivityProperties, WindowProperties.
 ## `af_exited`
 
 Sent when the user leaves the Activity view. Contains ActivityCloseProperties.
+
+## `open_popout`
+
+Sent when the user opens any kind of popout (such as when adding a new member
+to a group DM). Contains ChannelProperties, plus some fields:
+
+| field | type | description |
+| --: | :-- | :-- |
+| is\_friend | boolean | if the dm you're on represents a friend dm |
+| source | string | source of the popout, known value is `"DM"` |
+| type | string | type of the popout, known value is `"Add Friends to DM"` |
