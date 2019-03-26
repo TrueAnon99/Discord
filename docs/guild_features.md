@@ -12,3 +12,4 @@ Partnered and verified guilds are determined by these features.
 | MORE\_EMOJIS | Extends emoji count to 200 |
 | LURKABLE | Allows people to browse the server without fully joining |
 | NEWS | Guild has an application linked and can have a channel marked for news |
+| COMMERCE | Guild has an application linked and can have a channel linking directly to the store page of an application |
