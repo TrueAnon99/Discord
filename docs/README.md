@@ -9,7 +9,8 @@ Unofficial documentation for Undocumented Discord APIs.
  - [Mobile Indicator](/mobile_indicator.html)
  - [Lazy Guilds](/lazy_guilds.html)
  - [User Data Collection](/science.html)
- - [Per-Client Statuses](per-client_status.html)
+ - [Per-Client Statuses](/per-client_status.html)
+ - [Guild Features](/guild_features.html)
 
 ## Licensing?
 
