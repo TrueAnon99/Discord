@@ -1,6 +1,7 @@
 # discord-unofficial-docs
 
-Unofficial documentation for Undocumented Discord APIs.
+Unofficial documentation for Undocumented Discord APIs. Also contains an outline
+of Discord's infrastructure.
 
 ## Topics
 
@@ -11,6 +12,7 @@ Unofficial documentation for Undocumented Discord APIs.
  - [User Data Collection](/science.html)
  - [Per-Client Statuses](/per-client_status.html)
  - [Guild Features](/guild_features.html)
+ - [Discord's Infrastructure](/infrastructure.md)
 
 ## Licensing?
 
