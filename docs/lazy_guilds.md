@@ -5,15 +5,16 @@ added `guild_id` fields in some message/channel events. This documents
 Unkown OP codes and mechanisms for optimization of the guild member list.
 
 **Note:** This is not a complete document on how lazy guilds work, however, it
-is lead to believe this is the most complete document on the topic.
+is lead to believe this is the most complete public document on the topic.
 
 **Note for Server implementors:** The documentation describes behaviors that are
-non-normative for the Discord API so that it is easy to reimplement.
+non-normative for the Discord API so that it becomes easier to reimplement.
 
 The documentation is heavily based on [Litecord]'s [implementation of lazy
-guilds](https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py).
+guilds](lazy-guild-impl).
 
 [Litecord]: https://gitlab.com/litecord/litecord
+[lazy-guild-impl]:https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py
 
 ## Known history
 
@@ -23,11 +24,9 @@ enough for something as big as Fortnite (e.g Guild Sync).
 
 They were deployed on the guild and it was a success, now all the guilds have
 that feature enabled. The official client only uses Lazy Guild methods from now
-on. It is unknown when *exactly* this constraint was added.
-
-Note that lazy guilds are backwards compatible. Clients can either subscribe
-to a Lazy Guild or not, by relying on other methods to gather the member list,
-such as known OP 8 "Request Guild Members", or "undocumented" OP 12 "Guild Sync"
+on. It is unknown when *exactly* this was done. The other guild presence fetch
+methods still exist and are functional for backwards-compatibility's sake: OP
+12 Guild Sync and OP 8 Request Guild Members respectively.
 
 ## OP 14 "Lazy Request"
 
