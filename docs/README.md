@@ -12,7 +12,8 @@ of Discord's infrastructure.
  - [User Data Collection](/science.html)
  - [Per-Client Statuses](/per-client_status.html)
  - [Guild Features](/guild_features.html)
- - [Discord's Infrastructure](/infrastructure.md)
+ - [Discord's Infrastructure](/infrastructure.html)
+ - [Guild Sync](/guild_sync.html)
 
 ## Licensing?
 
