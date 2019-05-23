@@ -14,7 +14,7 @@ Partnered and verified guilds are determined by these features.
 | LURKABLE | Allows people to browse the server without fully joining |
 | MORE\_EMOJI | Extends emoji count to 200 |
 | NEWS | Guild has an application linked and can have a channel marked for news |
-| PARTNERED | Guild is partnered (not deployed?) |
+| PARTNERED | Guild is partnered |
 | VANITY\_URL | Custom invite URLs |
 | VERIFIED | Adds verified tick and image |
 | VIP\_REGIONS | Gives access to VIP voice regions |
