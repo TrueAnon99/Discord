@@ -5,29 +5,48 @@ added `guild_id` fields in some message/channel events. This documents
 Unkown OP codes and mechanisms for optimization of the guild member list.
 
 **Note:** This is not a complete document on how lazy guilds work, however, it
-is lead to believe this is the most complete document on the topic.
+is lead to believe this is the most complete public document on the topic.
 
 **Note for Server implementors:** The documentation describes behaviors that are
-non-normative for the Discord API so that it is easy to reimplement.
+non-normative for the Discord API so that it becomes easier to reimplement.
 
 The documentation is heavily based on [Litecord]'s [implementation of lazy
-guilds](https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py).
+guilds](lazy-guild-impl).
 
 [Litecord]: https://gitlab.com/litecord/litecord
+[lazy-guild-impl]:https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py
 
 ## Known history
 
-Lazy guilds were first implemented because of known stresses cause by the
+Lazy guilds were first implemented because of known stresses caused by the
 Fortnite Discord guild. The existing tooling to handle big guilds were not
 enough for something as big as Fortnite (e.g Guild Sync).
 
-They were deployed on the guild and it was a success, now all the guilds have
-that feature enabled. The official client only uses Lazy Guild methods from now
-on. It is unknown when *exactly* this constraint was added.
+Limitations of the old member list methods (Guild Sync, Request Guild Members)
+were already known to not scale well at large guilds. One of the first big
+examples was the original Blobs guild. The course of events goes as this:
+ - An at-everyone ping happened in the guild, causing a big spike in
+   internal server traffic as the notification subsystem fans it out to users.
+ - Users open the server. Many. This part is important, because the client
+   subscribes to the guild via (what that time was) guild sync.
+ - The large influx of subscriptions also caused large subscriptions to the
+   member list, and considering Blobs has many members, there's a very high
+   chance of the first 1K members in the guild going online or offline. You were
+   able to see the online counts changing quickly.
+ - If enough subscriptions were done, the Guild genserver powering the Blobs
+   guild would crash, and so all users would find the infamous
+   "unavailable guild" icon on their clients.
 
-Note that lazy guilds are backwards compatible. Clients can either subscribe
-to a Lazy Guild or not, by relying on other methods to gather the member list,
-such as known OP 8 "Request Guild Members", or "undocumented" OP 12 "Guild Sync"
+(Keep in mind the above "line of events" was not in any way confirmed by
+Discord, and is a collection of "best guesses" by non-Discord-employees)
+
+Lazy guilds were deployed on the guild and it was a success, now all the guilds
+have that feature enabled.
+The official client only uses Lazy Guild methods from now on.
+It is unknown when *exactly* this was done. The other guild presence fetch
+methods still exist and are functional for backwards-compatibility's sake are:
+ - OP 8 Request Guild Members
+ - OP 12 Guild Sync
 
 ## OP 14 "Lazy Request"
 
@@ -51,7 +70,7 @@ events related to those ranges.
 **ASSUMPTION:** `typing` field means the client wants to be subscribed to the
 ranges the currently-typing members are on.
 
-**ASSUMPTION:** Ranges can have any size.
+**ASSUMPTION:** Ranges can have any size, except negative.
 
 ### OP 14 Structure
 
@@ -61,7 +80,7 @@ ranges the currently-typing members are on.
 | channels | map[snowflake -> list[list[int, int]]] | channel ranges |
 | members | unknown | unknown |
 | activities | boolean | unknown |
-| typing | boolean | unknown, see assumption about the nature of this field |
+| typing | boolean | unknown, check assumptions |
 
 ## `GUILD_MEMBER_LIST_UPDATE` event
 
@@ -76,21 +95,24 @@ permission overwrites for the given channel. This is made to prevent duplicity
 of data in both the client and server (if channels have the same permission
 overwrites, they bsaically have the same member lists).
 
-The algorithm is as follows, in pseudocode.
+The algorithm is as follows, in Python:
 
-The pseudocode assumes `Permissions` to be parsing a given permissions number
-into more readable fields, those are specified under Discord's API docs.
+ - Assumes that `Permissions` parses a given permissions number
+   into more readable fields, those are specified under Discord's API docs.
 
-The pseudocode also assumes `mmh3` to be a function providing an implementation
-of MurMurHash version 3.
+ - Assumes `mmh3` to be a function providing an implementation of
+   MurMurHash version 3.
 
-This was taken off [Litecord]'s implementation.
+This was taken off [Litecord]'s implementation. Type hints are provided for
+nicer understanding.
 
 ```python
-def list_id(channel) -> str:
+def list_id(channel: Channel) -> str:
     # list of strings holding the hash input
-    hash_in = []
+    hash_in: List[str] = []
 
+    # actor_id is a snowflake, representing either a user or a role
+    # overwrite is Dict[str, int]
     for actor_id, overwrite in channel.channel_overwrites:
         allow = Permissions(overwrite['allow'])
         deny = Permissions(overwrite['deny'])
@@ -100,8 +122,8 @@ def list_id(channel) -> str:
         elif deny.read_messages:
             hash_in.append(f'deny:{actor_id}')
 
-    hash_in = ','.join(ovs_i)
-    return str(mmh3(hash_in))
+    mm3_in = ','.join(hash_in)
+    return str(mmh3(mm3_in))
 ```
 
 ### Groups
@@ -109,12 +131,10 @@ def list_id(channel) -> str:
 Groups are a core concept of understanding lazy guilds. The maximum number of
 groups is assumed to be the maximum number of roles a guild can have.
 
-There are two default groups, and then a general rule for any group.
-
-The default groups are the online members and the offline members.
-
-After the default groups, all roles that have the `hoisted` property set to
-true are considered groups.
+There are two default groups, and then a general rule for any group:
+ - The default groups are the online members and the offline members.
+ - After the default groups, all roles that have the `hoisted` property set
+   are considered groups.
 
 Groups are ordered by the same order roles are, with the online and offline
 coming in last, respectively.
@@ -124,7 +144,7 @@ coming in last, respectively.
 | field | type | description |
 | --: | :-- | :-- |
 | id | snowflake OR "online" OR "offline" | group id |
-| count | positive integer, includes 0 | the amount of members in that group |
+| count | unsigned number | the amount of members in that group |
 
 ### Event structure
 
@@ -161,7 +181,7 @@ It can be a Group object, or a member object with a `presence` field attached.
 ## Implementation Notes
 
 *This section is non-normative. This is also aimed at server implementors
-wanting to implement Lazy Guilds. Clients should only bother with the
+wanting to implement Lazy Guilds. Clients only bother with the
 `GUILD_MEMBER_LIST_UPDATE` events*
 
 For `SYNC` events, server implementors can assume the `index`
@@ -214,7 +234,7 @@ single member):
  - A role having its position updated (group changes position).
  - A role having its hoisted property set to false (removal of a group).
  - A new member joining (creation of a member in a group, most probably
-    auto-inserting them into the online group).
+   auto-inserting them into the online group).
  - A member leaving (be it via a kick or a ban, they all have the same
-    meaning to the member list).
+   meaning to the member list).
  - A member updating its user information (such as avatar or username).
