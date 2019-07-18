@@ -5,11 +5,13 @@ Guild folders (also called server folders) let you sort your guilds.
 Folder creation is stored and handled by user settings.
 
 ### Structure
+
 | Field | Type | Description |
 | --: | -- | :-- |
 | guild_folders | array | Array of folder objects |
 
 ### Folder Object
+
 | Field | Type | Description |
 | --: | -- | :-- |
 | id | snowflake | folder id |

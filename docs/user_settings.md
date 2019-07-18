@@ -5,6 +5,7 @@ Most settings of the client are stored here for syncing.
 Retrieve settings
 
 ### Structure
+
 | Field | Type | Description |
 | --: | -- | :-- |
 | afk_timeout | integer | How long from being idle from the client before you're marked as "AFK", this handles when you should get push notifications. |
@@ -33,7 +34,9 @@ Retrieve settings
 | timezone_offset | integer | Timezone offset. Arbitrary number, no way to change in client |
 
 ### Friend Source Flags Structure
+
 All of these values are optional and only one will ever be set at a time, to set false, remove the key from the object
+
 | Field | Type | Description |
 | --: | -- | :-- |
 | all | boolean | Anyone can add you |
