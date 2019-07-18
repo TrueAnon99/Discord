@@ -14,6 +14,8 @@ of Discord's infrastructure.
  - [Guild Features](/guild_features.html)
  - [Discord's Infrastructure](/infrastructure.html)
  - [Guild Sync](/guild_sync.html)
+ - [Guild Folders](/guild_folders.html)
+ - [User Settings](/user_settings.html)
 
 ## Licensing?
 
