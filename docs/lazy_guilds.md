@@ -14,7 +14,7 @@ The documentation is heavily based on [Litecord]'s [implementation of lazy
 guilds](lazy-guild-impl).
 
 [Litecord]: https://gitlab.com/litecord/litecord
-[lazy-guild-impl]:https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py
+[lazy-guild-impl]: https://gitlab.com/litecord/litecord/blob/master/litecord/pubsub/lazy_guild.py
 
 ## Known history
 
