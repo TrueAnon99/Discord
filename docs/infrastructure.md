@@ -25,7 +25,7 @@ This has some degree of speculation as Discord's backend is closed.
 
 
 ## Programming languages:
- - [Elixir](https://elixir-lang.org/) for any real time communication,
+ - [Elixir](https://elixir-lang.org/) for the Gateway/WebSockets API,
     [source](https://blog.discordapp.com/scaling-elixir-f9b8e1e7c29b).
     - [ex\_hash\_ring](https://github.com/discordapp/ex_hash_ring)
     - [manifold](https://github.com/discordapp/manifold)
@@ -37,21 +37,21 @@ This has some degree of speculation as Discord's backend is closed.
  - [Python](https://www.python.org/) for HTTP/REST API,
     The best guesses to which framework are [Flask].
  - [Go](https://golang.org):
-    - The embed servers, no *formal* source, but it has been confirmed by
-        Discord developers informally.
+    - The embed servers, confirmed by Discord developers *informally*.
     - Note that the embedding servers and mediaproxy, while able to be its
         own logical unit, as experimented in litecord's [mediaproxy], can
         be treated separately.
     - [Punt], replacing Logstash in ELK (Elasticsearch, Logstash, Kibana) setups.
     - [Lilliput](https://github.com/discordapp/lilliput), which is a main part
         of their media proxy. Lillput is also written in C++.
-        [source!](https://blog.discordapp.com/how-discord-resizes-150-million-images-every-day-with-go-and-c-c9e98731c65d)
- - [Rust](https://www.rust-lang.org/) for many parts of the Discord Store, most commonly:
-   - [Game SDK](https://discordapp.com/developers/docs/game-sdk/sdk-starter-guide),
+        [source](https://blog.discordapp.com/how-discord-resizes-150-million-images-every-day-with-go-and-c-c9e98731c65d)
+ - [Rust](https://www.rust-lang.org/) for parts of the Discord Store, most commonly:
+   - [GameSDK](https://discordapp.com/developers/docs/game-sdk/sdk-starter-guide),
         to make Discord integrations for any game.
    - [Dispatch](https://discordapp.com/developers/docs/dispatch/dispatch-and-you),
         which is a tool to send assets to Discord's servers.
- - C++ for the [Discord RPC library](https://github.com/discordapp/discord-rpc).
+   - It is known Rust is used for lazy guilds. [source](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3)
+ - C++ for the [Discord RPC library](https://github.com/discordapp/discord-rpc). (deprecated in favor of GameSDK)
 
 
 ## Distribution:
