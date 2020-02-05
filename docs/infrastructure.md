@@ -51,6 +51,7 @@ This has some degree of speculation as Discord's backend is closed.
    - [Dispatch](https://discordapp.com/developers/docs/dispatch/dispatch-and-you),
         which is a tool to send assets to Discord's servers.
    - It is known Rust is used for lazy guilds. [source](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3)
+   - Read States service, rewritten from Go. [source](https://blog.discordapp.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f)
  - C++ for the [Discord RPC library](https://github.com/discordapp/discord-rpc). (deprecated in favor of GameSDK)
 
 
