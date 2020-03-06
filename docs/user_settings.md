@@ -32,7 +32,7 @@ Retrieve settings
 | status | string | Current status. Values: online, idle, dnd, invisible |
 | theme | string | Client theme. Values: dark, light |
 | timezone_offset | integer | Timezone offset. Arbitrary number, no way to change in client |
-| custom\_status | CustomStatus | Set custom status. Structure defined in [Custom Status page](/custom-status.html) |
+| custom\_status | CustomStatus | Set custom status. Structure defined in [Custom Status page](/custom_status.html) |
 
 ### Friend Source Flags Structure
 
