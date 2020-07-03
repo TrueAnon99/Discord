@@ -72,6 +72,8 @@ This has some degree of speculation as Discord's backend is closed.
  - [Cloudflare](https://www.cloudflare.com/) as a proxy to almost all services,
      voice servers need to be direct connections, so they don't pass through CF.
      More on voice servers in the WebRTC source.
+ - "[...]we use [Algolia](https://www.algolia.com/) to power some search features at Discord."
+     [source, by jhgg](https://news.ycombinator.com/item?id=23719172)
 
 
 ## General technologies
