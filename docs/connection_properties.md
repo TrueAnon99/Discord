@@ -13,12 +13,16 @@ for `os`, `browser` and `device`.
 | `browser_user_agent` | string | the user agent for the device |
 | `client_build_number` | integer | the client's build number |
 | `client_event_source` | unknown | unknown |
-| `client_version` | string | the client's version |
+| `client_version` / `browser_version` | string | the client's / browser's version |
 | `device` | string | device identifier |
 | `device_id` | string | device identifier |
 | `distro` | string | your distribution of linux |
 | `os` | string | your operating system identifier |
 | `os_arch` | string | your device architecture, e.g `"x86"` |
 | `os_version` | string | your device os version, e.g `4.20-1-arch1-1-ARCH` |
+| `referrer` | string | referring page |
+| `referrer_current` | string | unknown |
+| `referring_domain` | string | the domain of the referer |
+| `referring_domain_current` | string | unknown |
 | `release_channel` | string | the client's release channel, `stable`, `ptb`, `canary` |
 | `window_manager` | string | contains your desktop environment and window manager |
