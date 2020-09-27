@@ -17,6 +17,7 @@ of Discord's infrastructure.
  - [Guild Folders](/guild_folders.html)
  - [User Settings](/user_settings.html)
  - [Remote Auth (Desktop)](/desktop_remote_auth.html)
+ - [Remote Auth (Mobile)](/mobile_remote_auth.html)
  - [Custom Status](/custom_status.html)
 
 ## Licensing?

@@ -104,9 +104,16 @@ For example: `196769986071625728:1212:d0900b8fe361c755549ab0beadb35075:Mary`
 
 ## OP `finish`
 
-When the user confirms the login on their device, the user sends a `finish` packet containing an encrypted token.
+When the user confirms the login on their device, the server sends a `finish` packet containing an encrypted token.
 This event also marks the closing of the websocket.
 
 | field | type | description |
 | --: | :-- | :-- |
 | `encrypted_token` | token | user's token |
+
+## OP `cancel`
+
+When the user cancels the login on their device, the server sends a `cancel` packet.
+This event also marks the closing of the websocket.
+
+This OP has no other fields.
