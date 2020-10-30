@@ -66,11 +66,11 @@ After receiving an `init` packet from the client, the server sends a `nonce_proo
 
 ### (From Client)
 
-After the client receives a `nonce_proof` packet from the server, the client sends back a `nonce_proof` packet of its own containing the decrypted data encoded as base64-url.
+After the client receives a `nonce_proof` packet from the server, the client sends back a `nonce_proof` packet of its own containing a SHA-256 digest of the decrypted data encoded as base64-url.
 
 | field | type | description |
 | --: | :-- | :-- |
-| `proof` | base64-url | base64-url-encoded data decrypted from the `encrypted_nonce` parameter |
+| `proof` | base64-url | base64-url-encoded SHA-256 digest of data decrypted from the `encrypted_nonce` parameter |
 
 ## OP `pending_remote_init`
 
