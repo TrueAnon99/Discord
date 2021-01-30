@@ -134,6 +134,17 @@ By specifying an empty `content` string and adding sticker IDs into the array of
   - You have provided an invalid or malformed ID
   - Stickers are not available in your country
 
+### Example payload
+
+```json
+{
+  "content": "",
+  "nonce": "804415164441952256",
+  "sticker_ids": ["748293342357356564"],
+  "tts": false
+}
+```
+
 ## Special thanks
 - To Brazilian **Kyatsuu**#5359 (270361773662535681) for following my instructions to reverse-engineer this.
 
