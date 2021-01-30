@@ -56,7 +56,7 @@
 }
 ```
 
-## Extended sticker pack object
+## Per-user sticker pack object
 
 ```json
 {
@@ -95,7 +95,7 @@ An **authorized** API endpoint without any parameters that returns the current s
 ### Response
 
 ```json
-[ExtendedStickerPack]
+[PerUserStickerPack]
 ```
 
 ### Example response
