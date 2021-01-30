@@ -20,7 +20,9 @@ Discord uses 2 formats of stickers right now (even though there's 3rd one):
 | asset         | string  | asset ID on the CDN |
 | preview_asset | string? | asset ID of preview (in the store?) |
 | format_type   | integer | format of the asset. 1 for png, 2 for apng, 3 for lottie |
-| tags          | string  | search tags for this sticker |
+| tags          | string  | search tags for this sticker. also used for suggestions as you type\* |
+
+\* **Front-end specific**: Tags starting with a ":" get suggested under emote suggestions, but tags that are just words get suggested in a little popup above the stickers menu button.
 
 ### Examples
 
