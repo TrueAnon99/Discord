@@ -64,7 +64,7 @@
 }
 ```
 
-## Per-user sticker pack object
+## <a name="per-user-sticker-pack"></a> Per-user sticker pack object
 
 | field                  | type        | description |
 | --:                    | :--         | :-- |
@@ -100,9 +100,7 @@ An **authorized** API endpoint without any parameters that returns the current s
 
 ### Response
 
-```json
-[PerUserStickerPack]
-```
+An array of per-user [sticker pack objects](#per-user-sticker-pack).
 
 ### Example response
 
@@ -127,9 +125,10 @@ An **authorized** API endpoint without any parameters that returns the current s
 
 ## Sticker messages
 
-Sticker messages are an extended version of regular messages, though they are not embedded. 
+Sticker messages are an extended version of regular messages, though stickers are not embedded. 
 By specifying an empty `content` string and adding sticker IDs into the array of strings `sticker_ids`, you can send a sticker message.
-It can also return these errors:
+
+### Errors
 - `403 Forbidden {"message": "Cannot use this sticker", "code": 50081}`: It can mean that:
   - You haven't paid for this sticker pack
   - You have provided an invalid or malformed ID
