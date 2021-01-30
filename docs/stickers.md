@@ -4,20 +4,18 @@
 
 ## Sticker object
 
-```json
-{
-  "id": string,
-  "name": string, // based on the locale?
-  "description": string, // same thing as `tags`?
-  "pack_id": string,
-  "asset": string, // id on the discord cdn
-  "preview_asset": string, // another id on the discord cdn
-  "format_type": integer,
-  "tags": string
-}
-```
+| field         | type    | description |
+| --:           | :--     | :-- |
+| id            | string  | unique ID of this sticker |
+| name          | string  | display name of this sticker (might be localized on the client?) |
+| description   | string  | display description of this sticker (in the store?) (might be localized on the client?). same thing as `tags` for older packs |
+| pack_id       | string  | the ID of the pack this sticker belongs to |
+| asset         | string  | asset ID on the CDN |
+| preview_asset | string? | asset ID of preview (in the store?) |
+| format_type   | integer | format of the asset. 1 for png, 2 for apng, 3 for lottie |
+| tags          | string  | search tags for this sticker |
 
-### Example
+### Examples
 
 ```json
 {
@@ -31,18 +29,28 @@
   "tags": "wumpus, scared, woah, scary, scream, :o, spooked, 😨, 😱, :scared, :scream"
 }
 ```
+```json
+{
+  "asset": "e71c2fc3e471f663dd78189d7b01b52d",
+  "description": "Wumpus crying into his helmet",
+  "format_type": 3,
+  "id": "755242820368859196",
+  "name": "Crying",
+  "pack_id": "755240383084232756",
+  "preview_asset": null,
+  "tags": "wumpus, cry, crying, sad, upset, feelsbadman, :<, :(, :[, 😥, 😢, 😭, ):, tear, :sad, :tear, :cry"
+}
+```
 
 ## Sticker pack object
 
-```json
-{
-  "id": string,
-  "stickers": [Sticker],
-  "name": string, // based on the locale?
-  "sku_id": string,
-  "cover_sticker_id": string
-}
-```
+| field            | type          | description |
+| --:              | :--           | :-- |
+| id               | string        | unique ID of this pack |
+| stickers         | list[Sticker] | the stickers that this pack provides |
+| name             | string        | display name of this pack (might be localized on the client?) |
+| sku_id           | string        | just SKU ID |
+| cover_sticker_id | string        | id of the "example sticker" in this pack |
 
 ### Example
 
@@ -58,16 +66,14 @@
 
 ## Per-user sticker pack object
 
-```json
-{
-  "user_id": string,
-  "pack_id": string,
-  "entitlement_id": string,
-  "has_access": bool,
-  "premium_type_required"?: integer, // nitro i guess
-  "sticker_pack": StickerPack
-}
-```
+| field                  | type        | description |
+| --:                    | :--         | :-- |
+| user_id                | string      | id of this user |
+| pack_id                | string      | id of the sticker pack |
+| entitlement_id         | string      | unknown purpose |
+| has_access             | boolean     | is this user an owner of the pack |
+| premium_type_required? | integer     | nitro level required to have the pack (0 for none, 1 for classic, 2 for full) |
+| sticker_pack           | StickerPack | composition > inheritence |
 
 ### Example
 
