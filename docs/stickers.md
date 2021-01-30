@@ -152,6 +152,11 @@ By specifying an empty `content` string and adding sticker IDs into the array of
 }
 ```
 
+## CDN
+
+### `/stickers/{pack_id}/{asset}.png`
+Accepts `size` (integer) and `passthrough?` (boolean) parameters, returning APNG animation of the sticker. Also returns just the first frame if `passthrough=false` is provided.
+
 ## Special thanks
 - To Brazilian **Kyatsuu**#5359 (270361773662535681) for following my instructions to reverse-engineer this.
 
