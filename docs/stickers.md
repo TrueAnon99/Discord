@@ -2,6 +2,13 @@
 
 **Stickers** in Discord are just like stickers in Telegram; they're animated pictures that are displayed bigger than emojis. Stickers are currently (January 28 2021) only available for users from Brazil, Canada, and Japan "for the soft launch."[^1] We don't know if it's going to be able to add custom stickers, but you can *buy* **sticker packs** from the store.
 
+## Animation formats
+
+Discord uses 2 formats of stickers right now (even though there's 3rd one):
+- **PNG**: Unused
+- **APNG**: Used for some stickers that usually look worse than **Lottie** stickers.
+- **Lottie**: Used for clean animation in some stickers. Lottie animations are rendered in Discord using [Discord's rlottie](https://github.com/discord/rlottie), a fork of [Telegram's rlottie](https://github.com/TelegramMessenger/rlottie).
+
 ## Sticker object
 
 | field         | type    | description |
