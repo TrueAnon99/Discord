@@ -81,7 +81,7 @@ Discord uses 2 formats of stickers right now (even though there's 3rd one):
 | pack_id                | string      | id of the sticker pack |
 | entitlement_id         | string      | unknown purpose |
 | has_access             | boolean     | is this user an owner of the pack |
-| premium_type_required? | integer     | nitro level required to have the pack (0 for none, 1 for classic, 2 for full) |
+| premium_type_required? | integer     | nitro level required to have the pack (0 for no nitro, 1 for nitro classic, 2 for nitro) |
 | sticker_pack           | StickerPack | composition > inheritence |
 
 ### Example
