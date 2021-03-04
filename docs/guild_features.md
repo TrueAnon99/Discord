@@ -1,6 +1,6 @@
 # Guild Features
 
-This list is deprectated in favor of [the original docs](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3).
+This list is deprectated in favor of [the original docs](https://discord.dev/resources/guild#guild-object-guild-features).
 This list stays for historical purposes only.
 
 Discord guilds can have features (formerly "flags") that extend certain features.
