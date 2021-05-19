@@ -44,7 +44,7 @@ Returns empty response 204.
 
 Get mutual friends with a certain peer. Returns a list of user objects.
 
-# `PATCH /users/users/@me/relationships/<peer_id>`
+# `PATCH /users/@me/relationships/<peer_id>`
 Used for setting a friend nickname.
 Body data is a JSON object with the property (string) nickname.
 The nickname could be removed by setting the nickname property to null.
