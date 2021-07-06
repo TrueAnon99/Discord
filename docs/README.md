@@ -21,6 +21,7 @@ of Discord's infrastructure.
 - [Remote Auth (Mobile)](/mobile_remote_auth.html)
 - [Custom Status](/custom_status.html)
 - [Client-side Interactions](/client_side_interactions.html)
+- [Integrations](/integrations.html)
 
 ## Licensing?
 
