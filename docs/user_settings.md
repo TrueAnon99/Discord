@@ -2,7 +2,7 @@
 Most client settings are stored here for syncing.
 
 ## `GET /users/@me/settings`
-Returns a [user settings](#user_settings_structure) object for the requester's account.
+Returns a [user settings](#user-settings-structure) object for the requester's account.
 
 ### User Settings Structure
 
@@ -14,17 +14,17 @@ Returns a [user settings](#user_settings_structure) object for the requester's a
 | animate_stickers | integer | when stickers animate; `0`: always, `1`: on hover/focus, `2`: never |
 | contact_sync_enabled | boolean | sync phone contacts with discord (seemingly unused, enabling contact sync does not change it) |
 | convert_emoticons | boolean | convert "old fashioned" emoticons to emojis |
-| custom_status | [custom status](/custom_status.html) object | custom status for the user |
+| custom_status | [custom status](/custom_status.html#customstatus-structure) object | custom status for the user |
 | default_guilds_restricted | boolean | allow DMs from guild members by default on guild join |
 | detect_platform_accounts | boolean | whether the client will detect accounts from other services for connections |
 | developer_mode | boolean | show the option to copy ids in right click menus |
 | disable_games_tab | boolean | hide the activity tab |
 | enable_tts_command | boolean | enable /tts command and playback |
 | explicit_content_filter | integer | content filter level; `0`: off, `1`: friends excluded, `2`: scan everyone |
-| friend_discovery_flags | integer | [flags](#friend_discovery_flags) for how people can add the user via contact sync |
-| friend_source_flags | [friend source flags](#friend_source_flags_structure) object | who can add the user as a friend |
+| friend_discovery_flags | integer | [flags](#friend-discovery-flags) for how people can add the user via contact sync |
+| friend_source_flags | [friend source flags](#friend-source-flags-structure) object | who can add the user as a friend |
 | gif_auto_play | boolean | play GIFs without hovering over them |
-| guild_folders | array of [guild folder](/guild_folder.html) objects | guild folders set by the user |
+| guild_folders | array of [guild folder](/guild_folders.html#folder-object) objects | guild folders set by the user |
 | guild_positions | array | array of guild ids in order of position on the sidebar |
 | inline_attachment_media | boolean | display images and video when uploaded directly |
 | inline_embed_media | boolean | display images and video when linked |
