@@ -13,6 +13,7 @@ This has some degree of speculation as Discord's backend is closed.
 [loqui]: https://github.com/discordapp/loqui
 [webrtc]: https://webrtc.org/
 [scylla]: https://scylladb.com/
+[grpc]: https://grpc.io/
 
 ## Storage:
 
@@ -57,7 +58,8 @@ This has some degree of speculation as Discord's backend is closed.
 
 ## Distribution:
 
-- [Loqui] for node communication.
+- [gRPC] for node communication.
+  - They used their own, [Loqui], but [that changed](https://github.com/discord/loqui/commit/8d394a7951fd3a82d109becc1aebbd9e7ccc894a).
 
 ## Logging:
 
