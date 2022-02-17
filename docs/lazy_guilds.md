@@ -70,6 +70,9 @@ events related to those ranges.
 **ASSUMPTION:** `typing` field means the client wants to be subscribed to the
 ranges the currently-typing members are on.
 
+**ASSUMPTION:** `activities` field means the client wants to recieve activities 
+alongside with the member objects.
+
 **ASSUMPTION:** Ranges can have any size, except negative.
 
 ### OP 14 Structure
@@ -78,8 +81,9 @@ ranges the currently-typing members are on.
 | --: | :-- | :-- |
 | guild\_id | snowflake | the guild id for the request |
 | channels | map[snowflake -> list[list[int, int]]] | channel ranges |
-| members | unknown | unknown |
-| activities | boolean | unknown |
+| members | boolean | unknown |
+| threads | boolean | unknown |
+| activities | boolean | unknown, check assumptions |
 | typing | boolean | unknown, check assumptions |
 
 ## `GUILD_MEMBER_LIST_UPDATE` event
