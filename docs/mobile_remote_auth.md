@@ -4,7 +4,7 @@ Remote auth lets users effortlessly log into the desktop client using a QR code 
 ## Initializing
 When a user scans a QR code, the mobile client does the following:
 1. First, the client parses the URL and checks that it's valid
-2. Next, the client extracts the "fingerprint" parameter from the url (the value after `/rp/`)
+2. Next, the client extracts the "fingerprint" parameter from the url (the value after `/ra/`)
 3. The client uses this "fingerprint" parameter to make a POST request to `/users/@me/remote-auth` with the following JSON-encoded body:
 
 | field | type | description |
