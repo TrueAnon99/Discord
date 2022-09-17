@@ -3,7 +3,7 @@
 Unofficial documentation for Undocumented Discord APIs. Also contains an outline
 of Discord's infrastructure.
 
-## Topics
+## Table of Contents
 
 - [Stickers](/stickers.html)
 - [Relationships](/relationships.html)
@@ -11,6 +11,7 @@ of Discord's infrastructure.
 - [Mobile Indicator](/mobile_indicator.html)
 - [Lazy Guilds](/lazy_guilds.html)
 - [User Data Collection](/science.html)
+  - [Event List](/science_events.html)
 - [Per-Client Statuses](/per-client_status.html)
 - [Guild Features](/guild_features.html)
 - [Discord's Infrastructure](/infrastructure.html)
@@ -22,6 +23,7 @@ of Discord's infrastructure.
 - [Custom Status](/custom_status.html)
 - [Client-side Interactions](/client_side_interactions.html)
 - [Integrations](/integrations.html)
+- [Android's minimal version check](/android/min_version.html)
 
 ## Licensing?
 
