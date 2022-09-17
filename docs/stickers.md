@@ -154,6 +154,23 @@ By specifying an empty `content` string and adding sticker IDs into the array of
 }
 ```
 
+## Greetings
+
+Stickers can also be sent standalone by sending a POST request to `/api/channels/:channel/greet` endpoint.
+Other message fields, such as content, are ignored here. Only `sticker_ids` needs to be populated for the message to be valid.
+
+### Example request
+```json
+{
+  "sticker_ids": [/* one or more stickers */],
+  "message_reference": { // Optional
+    "guild_id":"777126643940196362",
+    "channel_id":"786737256160428042",
+    "message_id":"992792116470235277"
+  }
+}
+```
+
 ## CDN
 
 ### `/stickers/{pack_id}/{asset}.png`
