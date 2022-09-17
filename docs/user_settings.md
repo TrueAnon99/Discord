@@ -58,3 +58,16 @@ All of these fields are optional. To set false, either set the value to false or
 | all | ?boolean | Anyone can add you |
 | mutual_friends | ?boolean | Friends of friends can add you |
 | mutual_guilds | ?boolean | Server members can add you |
+
+
+## `GET /users/@me/settings-proto/:id`
+Returns the user's settings in [protobuf](https://developers.google.com/protocol-buffers) format. 
+The mapping of the protobuf fields is currently not documented.
+
+### Settings ID
+The `id` field can be one of:  
+| Value | Name | Description |
+| -- | -- | -- |
+|1|PRELOADED_USER_SETTINGS|Appears to be the contents of regular /settings|
+|2|FRECENCY_AND_FAVORITES_SETTINGS|Contains saved GIFs, as well as emoji and slash command [frecency](https://en.wikipedia.org/wiki/Frecency) data|
+|3|TEST_SETTINGS|Blank on a regular user account. Unknown purpose|
