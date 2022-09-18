@@ -105,6 +105,7 @@ For example: `196769986071625728:1212:d0900b8fe361c755549ab0beadb35075:Mary`
 ## OP `pending_login`
 
 When the user confirms the login on their device, the server sends a `pending_login` packet containing an ticket.
+Ticket example: `NTQyMzgzNDA1MjEyNjMxMDUx.XW4lFg.EKdRjWkejtdW5owRd2C4Uug9nH0hs10s57h8ag`. First part is a base64-encoded user id.
 This event also marks the closing of the websocket.
 
 | field | type | description |
