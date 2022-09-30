@@ -4,7 +4,7 @@
   "description": "Unoffical Documentation for the Discord API",
   "main": "index.js",
   "dependencies": {
-    "vuepress": "^0.14.8"
+    "vuepress": "^1.9.7"
   },
   "devDependencies": {},
   "scripts": {
