@@ -3,6 +3,8 @@
 Unofficial documentation for Undocumented Discord APIs. Also contains an outline
 of Discord's infrastructure.
 
+Source repository: https://gitlab.com/luna/discord-unofficial-docs
+
 ## Table of Contents
 
 - [Attachments](/attachments.html)
