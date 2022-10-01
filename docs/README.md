@@ -5,6 +5,7 @@ of Discord's infrastructure.
 
 ## Table of Contents
 
+- [Attachments](/attachments.html)
 - [Stickers](/stickers.html)
 - [Relationships](/relationships.html)
 - [Connection Properties](/connection_properties.html)
