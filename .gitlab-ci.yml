@@ -1,4 +1,4 @@
-image: node:9.11.1
+image: node:16
 
 link_validator:
   image: python:3.10-alpine
