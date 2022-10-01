@@ -6,9 +6,13 @@
 
 Discord wants to provide more benefits for Nitro users to drive Nitro adoption,
 one of them being bumping the attachment size limit from 100MB to 500MB, however,
-Cloudflare only allows for client requests sized 100MB, what to do then?
+Cloudflare only allows for client requests sized 100MB in the Free plan.
 
-The answer: New API for attachments.
+Cloudflare can bump this limit to 500MB for Enterprise customers, but users are
+able to upload up to 10 attachments in a single message, so the upper limit
+would be 5GB. What to do then?
+
+The answer: New API for asynchronous attachment uploads.
 
 ## How it currently works
 
