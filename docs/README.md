@@ -20,6 +20,7 @@ of Discord's infrastructure.
 - [Discord's Infrastructure](/infrastructure.html)
 - [Guild Sync](/guild_sync.html)
 - [Guild Folders](/guild_folders.html)
+- [User Notes](/user_notes.html)
 - [User Settings](/user_settings.html)
 - [Remote Auth (Desktop)](/desktop_remote_auth.html)
 - [Remote Auth V2 (Desktop)](/desktop_remote_auth_v2.html)
